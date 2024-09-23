@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/icon/icon.png"> 
+
+    <title>El Pollo Loco</title>
+
+    <script src="./module/drawable-object.class.js"></script>
+    <script src="./module/moveable-object.class.js"></script>
+    <script src="./module/endscreen.class.js"></script>
+    <script src="./module/winnerscreen.class.js"></script>
+    <script src="./module/character.class.js"></script>
+    <script src="./module/chicken.class.js"></script>
+    <script src="./module/chickenSmall.class.js"></script>
+    <script src="./module/clouds.class.js"></script>
+    <script src="./module/statusBar.class.js"></script>
+    <script src="./module/coinBar.class.js"></script>
+    <script src="./module/bottleBar.class.js"></script>
+    <script src="./module/endbossBar.class.js"></script>
+    <script src="./module/world.class.js"></script>
+    <script src="./module/background-object.class.js"></script>
+    <script src="./module/keyboard.class.js"></script>
+    <script src="./module/level.class.js"></script>
+    <script src="./module/throwable-object.class.js"></script>
+    <script src="./module/coins.class.js"></script>
+    <script src="./module/bottle.class.js"></script>
+    <script src="./module/endboss.class.js"></script>
+    <script src="./levels/level1.js"></script>
+    <script src="./js/game.js"></script>
+</head>
+
+<body onload="start()">
+
+    <h1>El Pollo Loco</h1>
+    <div id="startscreen" class="startscreen">
+        <img class="startImage" src="img/9_intro_outro_screens/start/startscreen_1.png">
+        <div id="buttons" class="buttons">
+            <button id="startButton" class="startbutton" onclick="init()">Start game</button>
+            <button id="controlButton" class="controlButton" onclick="openControls()">manual</button>
+            <button id="info" class="controlButton" onclick="info()">Imprint</button>
+        </div>
+    </div>
+
+
+    <div id="controlsContainer" class="controlsContainer">
+        <div class="X">
+            <button class="closeButton" onclick="closeControls()">
+                <img src="img/icon/x.png">
+            </button>
+        </div>
+        <div class="controlsContainerSeperater">
+            <img src="img/icon/left.png">
+            <span>Left</span>
+        </div>
+        <div class="controlsContainerSeperater">
+            <img src="img/icon/right.png">
+            <span>Right</span>
+        </div>
+        <div class="controlsContainerSeperater">
+            <img src="img/icon/person.png">
+            <span>Space</span>
+        </div>
+        <div class="controlsContainerSeperater">
+            <img src="img/icon/D.png">
+            <span>Throw</span>
+        </div>
+    </div>
+
+    <div id="infoContainer" class="ContainerForInfo">
+        <div class="X">
+            <button class="closeButton" onclick="closeInfo()">
+                <img src="img/icon/x.png">
+            </button>
+        </div>
+        <h1>Impressum</h1>
+
+        <p>Daniel Krieger<br />
+        Philipp-Rosenthal-Stra&szlig;e<br />
+        5<br />
+        04103 Leipzig</p>
+
+        <h2>Kontakt</h2>
+        <p>Telefon: 01772770056<br />
+        E-Mail: danielkrieger96@web.de</p>
+
+        <p>Quelle: <a href="https://www.e-recht24.de">e-recht24.de</a></p>
+    </div>
+
+
+    <div id="endscreen" class="endscreen">
+        <canvas id="canvas" class="canvas" width="720" height="480"></canvas>
+        <button id="muteButtonCanvas" class="muteButtonCanvas" onclick="mutePlay()">
+            <img class="mutePicture" id="mutePictureCanvas" src="img/icon/mute.png">
+        </button>
+        <div class="mobile" id="btns">
+            <div class="movebtns" id="movebtns">
+                <button class="btn" id="leftBtn">
+                    <img src="img/icon/left.png">
+                </button>
+                <button class="btn" id="rightBtn">
+                    <img src="img/icon/right.png">
+                </button>
+            </div>
+            <div class="throwJump" id="throwJump">
+                <button class="btn" id="throwBtn">
+                    <img src="img/icon/bottle.png">
+                </button>
+                <button class="btn" id="jumpBtn">
+                    <img src="img/icon/up.png">
+                </button>
+            </div>
+        </div>
+        <button id="restartButton" class="restartButton" onclick="world.restartGame()">Restart Game</button>
+    </div>
+
+
+</body>
+
+</html>

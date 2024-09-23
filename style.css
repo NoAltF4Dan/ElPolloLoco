@@ -1,0 +1,398 @@
+@font-face {
+    font-family: 'zabras';
+    src: url('fonts/Zabars.ttf');
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('img/desert/desert.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'zabras', Arial, Helvetica, sans-serif !important;
+}
+
+.mobile {
+    display: none;
+}
+
+h1 {
+    font-size: 64px;
+    letter-spacing: 6px;
+    text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.7);
+    color: #f4d82d;
+}
+
+canvas {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    bottom: 20px;
+    border-radius: 20px;
+    display: block !important;
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.7);
+}
+.startscreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    bottom: 20px;
+    max-width: 100%;
+}
+
+.startscreen img {
+    width: 100%;
+    height: 480px;
+    border-radius: 10px;
+    box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.7);
+}
+
+.muteButtonCanvas {
+    position: absolute;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 160px;
+    background-color: transparent;
+    border: 2px;
+}
+
+.muteButtonCanvas:hover {
+    cursor: pointer !important;
+    transform: scale(1.15);
+}
+
+.mutePicture {
+    height: 32px;
+    width: 32px;
+    object-fit: cover;
+    top: 0px;
+    position: absolute;
+
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.startbutton {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #e7e4ca;
+    background-color: #34652f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer !important;
+    box-shadow: 6px 4px 6px rgba(0, 0, 0, 0.7);
+    transition: background-color 0.3s ease;
+}
+
+.startbutton:hover {
+    background-color: #ffbb01;
+    cursor: pointer !important;
+}
+
+.endscreen {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 0px;
+}
+
+.restartButton {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #34652f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer !important;
+    box-shadow: 6px 4px 6px rgba(0, 0, 0, 0.7);
+    transition: background-color 0.3s ease;
+    position: relative;
+    bottom: 15px;
+}
+
+.restartButton:hover {
+    background-color: #ffbb01;
+    cursor: pointer !important;
+}
+
+.controlButton {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #e7e4ca;
+    background-color: #34652f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer !important;
+    box-shadow: 6px 4px 6px rgba(0, 0, 0, 0.7);
+    transition: background-color 0.3s ease;
+}
+
+.controlButton:hover {
+    background-color: #ffbb01;
+    cursor: pointer !important;
+}
+
+.ContainerForInfo {
+    background-image: url('img/desert/desert.png');
+    padding-top: 100px;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.85);
+    transition: background-color 0.3s ease;
+
+    background-size: cover;
+    background-position: center;
+}
+
+.ContainerForInfo h1{
+    font-size: 80px;
+    font-weight: 100;
+}
+
+.ContainerForInfo h2{
+    font-size: 50px;
+    font-weight: 100;
+}
+
+.ContainerForInfo p{
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.controlsContainer {
+    background-image: url('img/desert/desert.png');
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.85);
+    transition: background-color 0.3s ease;
+
+    background-size: cover;
+    background-position: center;
+}
+
+.controlsContainerSeperater {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    font-size: 40px;
+    max-width: 450px;
+}
+
+.controlsContainerSeperater img {
+    height: 50px;
+}
+
+.closeButton {
+    background-color: transparent !important;
+    transition: background-color 0.3s ease;
+    border: 5px;
+}
+
+.closeButton img{
+    height: 30px;
+}
+
+.closeButton:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ffbb01;
+    cursor: pointer;
+}
+
+.mobile {
+    z-index: 2000;
+    margin-top: -80px;
+    gap : 280px;
+    display: none;
+    justify-content: unset;
+    align-items: center;
+}
+.btn {
+    background-color: transparent;
+    border-color: transparent;
+    margin-bottom: 15px;
+}
+
+
+@media only screen and (max-width: 666px) {
+
+    body {
+        height: 100vh;  
+        margin: 0; 
+        background-image: url('img/icon/rotate.png');
+        background-size: 400px auto; 
+        background-position: center; 
+        background-repeat: no-repeat;
+    }
+    
+    canvas {
+        display: none;
+    }
+
+    .startscreen {
+        display: none !important;
+        object-fit: cover;
+    }
+
+    .endscreen {
+        display: none !important;
+    }
+
+    h1 {
+        display: none !important;
+    }
+
+    body {
+        overflow: hidden;
+        margin: 0;
+    }
+
+    .buttons {
+        position: absolute;
+        top: 20px;
+    }
+
+    .muteButtonCanvas {
+        top: 70px !important;
+    }
+
+    .restartButton {
+        position: absolute !important;
+        top: 5px !important;
+        bottom: unset !important;
+    }
+
+    .controlsContainer {
+        display: none !important;
+    }
+    
+}
+
+@media only screen and (max-height: 480px) {
+
+    body {
+        overflow: hidden;
+        margin: 0;
+        background-image: block;
+    }
+
+    canvas {
+        height: 100vh;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        border-radius: 0px;
+    }
+
+    .startscreen img {
+        width: 100% !important;
+        height: 480px;border-radius: 0px;
+    }
+    
+    .mobile {
+        display: flex;
+        justify-content: unset;
+        align-items: center;
+        margin-top: -50px;
+        position: fixed;
+        bottom: 0px;
+        height: 45px;
+        margin-left: 23px;
+        gap: 210px;
+    }
+
+    .startscreen {
+        height: 100vh;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    h1 {
+        display: none;
+    }
+
+    .mutePicture {
+        width: 25px !important;
+        height: 25px !important;
+    }
+
+    .buttons {
+        position: absolute;
+        top: 20px;
+    }
+
+    .btn {
+        background-color: transparent;
+        border-color: transparent;
+        margin-bottom: 15px;
+    }
+
+    .muteButtonCanvas {
+        top: 70px !important;
+    }
+
+    .restartButton {
+        position: absolute !important;
+        top: -10px !important;
+        bottom: unset !important;
+        font-size: 10px !important;
+    }
+
+    .controlsContainer {
+        width: 100% !important;
+        height: 100vh !important;
+        top: 0px !important;
+    }
+}
+
+
+
